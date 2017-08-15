@@ -1,0 +1,20 @@
+{
+  "name": "shi",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "autofe-scripts": "0.6.2",
+    "calipers": "^2.0.0",
+    "calipers-gif": "^2.0.0",
+    "calipers-jpeg": "^2.0.0",
+    "calipers-png": "^2.0.0",
+    "eslint-config-airbnb": "^15.1.0"
+  },
+  "dependencies": {
+    "element-ui": "^1.4.1"
+  },
+  "scripts": {
+    "start": "autofe-scripts start",
+    "build": "autofe-scripts build"
+  }
+}

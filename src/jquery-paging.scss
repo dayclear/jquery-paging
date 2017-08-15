@@ -1,0 +1,26 @@
+.paging {
+  .paging-ul {
+    font-size: 0;
+    
+    li {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+      background-color: #aaa;
+      margin-right: 5px;
+
+      &.paging-cur {
+        background-color: #666;
+      }
+
+      &.paging-prev-disable,
+      &.paging-next-disable {
+        background-color: #ddd;
+      }
+    }
+  }
+}
