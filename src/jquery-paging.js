@@ -1,9 +1,18 @@
 (function(){
 
   function Paging($el, option) {
-    this.total = option.total || 10;
-    this.cur = option.cur || 1;
-    this.cb = option.cb || function(index){return false;};
+    
+    var option = option || {
+      total: 10,
+      cur: 1,
+      max: 8,
+      cb: function(index){return false;}
+    }
+
+    this.total = option.total;
+    this.cur = option.cur;
+    this.max = option.max > 5 ? option.max : 5;
+    this.cb = option.cb;
     this.$el = $el;
 
     this.init();
@@ -17,16 +26,16 @@
       var $ul = $('<ul>').attr('class', 'paging-ul');
 
       this.addItem($ul, -1);
-      if (this.total > 8) {
+      if (this.total > this.max) {
         
-        if (this.total - this.cur < 6) {
+        if (this.total - this.cur < this.max - 2) {
           this.addItem($ul, 1);
           this.addItem($ul, -111);
-          for (var i = this.total - 5 ; i <= this.total; i++) {
+          for (var i = this.total - this.max + 3 ; i <= this.total; i++) {
             this.addItem($ul, i);
           };
-        } else if (this.cur - 1 < 6) {
-          for (var i = 1 ; i <= 6; i++) {
+        } else if (this.cur - 1 < this.max - 2) {
+          for (var i = 1 ; i <= this.max - 2; i++) {
             this.addItem($ul, i);
           };
           this.addItem($ul, -111);
@@ -34,8 +43,8 @@
         } else {
           this.addItem($ul, 1);
           this.addItem($ul, -111);
-          for (var i = this.cur-1 ; i <= this.cur+2; i++) {
-            this.addItem($ul, i);
+          for (var i = -Math.floor((this.max - 5)/2)  ; i <= Math.ceil((this.max - 5)/2); i++) {
+            this.addItem($ul, this.cur + i);
           };
           this.addItem($ul, -111);
           this.addItem($ul, this.total);
@@ -44,7 +53,7 @@
       } else {
 
         for (var i = 1 ; i <= this.total; i++) {
-          this.addItem($ul, this.cur + i);
+          this.addItem($ul, i);
         };
       }
       this.addItem($ul, -11);
