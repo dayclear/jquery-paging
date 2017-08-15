@@ -4,6 +4,6 @@ Thumbs.db
 
 node_modules
 
-build
+build/maps
 
 npm-debug.log

@@ -1,0 +1,21 @@
+.paging .paging-ul {
+  font-size: 0; }
+  .paging .paging-ul li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    background-color: #aaa;
+    margin-right: 5px;
+    border-radius: 2px; }
+    .paging .paging-ul li.paging-cur {
+      background-color: #18b9f0; }
+    .paging .paging-ul li.paging-prev-disable, .paging .paging-ul li.paging-next-disable {
+      background-color: #ddd; }
+    .paging .paging-ul li.paging-ellipsis {
+      background-color: #ddd; }
+
+/*# sourceMappingURL=maps/jquery-paging.css.map */
