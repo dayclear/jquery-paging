@@ -17,13 +17,29 @@
       var $ul = $('<ul>').attr('class', 'paging-ul');
 
       this.addItem($ul, -1);
-      if(this.total > 8) {
+      if (this.total > 8) {
         
-        for (var i = 0 ; i < 6; i++) {
-          this.addItem($ul, this.cur + i);
-        };
-        this.addItem($ul, -111);
-        this.addItem($ul, this.total);
+        if (this.total - this.cur < 6) {
+          this.addItem($ul, 1);
+          this.addItem($ul, -111);
+          for (var i = this.total - 5 ; i <= this.total; i++) {
+            this.addItem($ul, i);
+          };
+        } else if (this.cur - 1 < 6) {
+          for (var i = 1 ; i <= 6; i++) {
+            this.addItem($ul, i);
+          };
+          this.addItem($ul, -111);
+          this.addItem($ul, this.total);
+        } else {
+          this.addItem($ul, 1);
+          this.addItem($ul, -111);
+          for (var i = this.cur-1 ; i <= this.cur+2; i++) {
+            this.addItem($ul, i);
+          };
+          this.addItem($ul, -111);
+          this.addItem($ul, this.total);
+        }
 
       } else {
 
@@ -67,7 +83,8 @@
 
       } else if (index === -111) {
 
-          $item = $('<li>...</li>');
+          $item = $('<li>...</li>')
+                    .attr('class', 'paging-ellipsis');
 
       } else if (index === _this.cur) {
 

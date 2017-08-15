@@ -12,13 +12,23 @@
       color: #fff;
       background-color: #aaa;
       margin-right: 5px;
+      border-radius: 2px;
 
       &.paging-cur {
-        background-color: #666;
+        background-color: #18b9f0;
+      }
+
+      &.paging-prev,
+      &.paging-next { // 上一页和下一页的样式
+
       }
 
       &.paging-prev-disable,
-      &.paging-next-disable {
+      &.paging-next-disable { // 上一页和下一页不能点击的样式
+        background-color: #ddd;
+      }
+      
+      &.paging-ellipsis { // 省略号的样式
         background-color: #ddd;
       }
     }
