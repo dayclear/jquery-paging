@@ -2,8 +2,6 @@
 
 项目需求需要一个分页插件,基于jquery编写，jquery-paging.js必须，jquery-paging.css为分页样式，可覆盖
 
----
-
 1 使用方法: `$(el).paging(options);`
 
 2 参数说明
